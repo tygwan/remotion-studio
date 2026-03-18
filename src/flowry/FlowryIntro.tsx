@@ -11,10 +11,7 @@ import {
 import { loadFont } from "@remotion/google-fonts/NotoSansKR";
 
 // ─── Font Setup ───────────────────────────────────────
-const { fontFamily } = loadFont("normal", {
-  weights: ["400", "500", "700", "900"],
-  subsets: ["korean", "latin"],
-});
+const { fontFamily } = loadFont();
 
 // ─── Color Palette ────────────────────────────────────
 const C = {
