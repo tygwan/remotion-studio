@@ -1,6 +1,9 @@
 name: Render Video
 
 on:
+  push:
+    paths:
+      - '.github/workflows/render.yml'
   workflow_dispatch:
     inputs:
       composition:
@@ -32,10 +35,12 @@ jobs:
             libcups2 libcairo2 libpango-1.0-0 libatk-bridge2.0-0
 
       - name: Render video
-        run: npx remotion render src/index.tsx ${{ github.event.inputs.composition }} out/${{ github.event.inputs.composition }}.mp4
+        run: |
+          COMP="${{ github.event.inputs.composition || 'FlowryIntro' }}"
+          npx remotion render src/index.tsx "$COMP" "out/${COMP}.mp4"
 
       - name: Upload video
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ github.event.inputs.composition }}
-          path: out/${{ github.event.inputs.composition }}.mp4
+          name: ${{ github.event.inputs.composition || 'FlowryIntro' }}
+          path: out/
