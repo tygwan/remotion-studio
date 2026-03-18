@@ -1,0 +1,20 @@
+import { registerRoot } from "remotion";
+import { Composition } from "remotion";
+import { FlowryIntro } from "./flowry/FlowryIntro";
+
+export const RemotionRoot: React.FC = () => {
+  return (
+    <>
+      <Composition
+        id="FlowryIntro"
+        component={FlowryIntro}
+        durationInFrames={600}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+    </>
+  );
+};
+
+registerRoot(RemotionRoot);
