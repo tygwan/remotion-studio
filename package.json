@@ -4,20 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "node scripts/patch-wsl-port.js",
+    "studio": "npx remotion studio"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "@remotion/cli": "^4.0.436",
-    "@remotion/google-fonts": "^4.0.436",
-    "@remotion/player": "^4.0.436",
+    "@remotion/cli": "^4.0.438",
+    "@remotion/google-fonts": "^4.0.438",
+    "@remotion/light-leaks": "^4.0.438",
+    "@remotion/media": "^4.0.438",
+    "@remotion/player": "^4.0.438",
+    "@remotion/transitions": "^4.0.438",
     "@types/react": "^19.2.14",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "remotion": "^4.0.436",
+    "remotion": "^4.0.438",
     "typescript": "^5.9.3"
   }
 }
